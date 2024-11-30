@@ -73,6 +73,19 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
 }
 
+html {
+  font-size: 70%; /* 16px por defecto */
+}
+
+body {
+  font-size: 1.2em; /* 1.2 veces el tamaño base */
+}
+
+h1 {
+  font-size: 5vw; /* El tamaño depende del ancho de la pantalla */
+}
+
+
 #cuidados{
   text-align: center;
   color: #ebacb2;
