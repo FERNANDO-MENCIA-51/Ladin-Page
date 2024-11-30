@@ -2,25 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Salud y Bienestar</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="title" content="Salud y Bienestar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>salud-Bienestar</title>
+    <meta name="title" content="salud-Bienestar">
     <meta name="description" content="">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/salud-bienestar/css/ods-info.css">
-    <link rel="stylesheet" href="/salud-bienestar/css/ods.css">
-    <link rel="stylesheet" href="/salud-bienestar/SYBM/css/style.css">
-    <link rel="stylesheet" href="/salud-bienestar/css/style.min.css">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link rel="stylesheet" href="/salud-Bienestar/css/ods.css">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -30,19 +25,30 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="/salud-bienestar/SYBM/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="/salud-bienestar/SYBM/lib/owlcarousel/assets/owl.carousel.css" rel="stylesheet">
-    <link href="/salud-bienestar/SYBM/lib/tempusdominus/css/tempusdominus-bootstrap-4.css" rel="stylesheet" />
+    <link href="/Salud-Bienestar/SYBM/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/Salud-Bienestar/SYBM/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/Salud-Bienestar/SYBM/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/Salud-Bienestar/SYBM/css/style.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </head>
 
-<body>
+<body id="top">
 
     <!-- 
     - #PRELOADER
     -->
+
+    <div class="preload" data-preaload>
+        <div class="circle"></div>
+        <p class="text">Salud y Bienestar</p>
+    </div>
+
 
     <div class="topbar">
         <div class="container">
@@ -87,12 +93,18 @@
 
         </div>
     </div>
+
     <header class="header" data-header>
         <div class="container">
 
             <a href="#" class="logo">
-                <img src="/salud-bienestar/image/Logo.png" width="50" height="50" alt="ods">
+                <img src="/salud-Bienestar/image/Logo.png" width="50" height="50" alt="ods">
             </a>
+
+            <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+                <ion-icon name="menu-outline" aria-hidden="true" class="menu-icon"></ion-icon>
+                <ion-icon name="close-outline" aria-hidden="true" class="close-icon"></ion-icon>
+            </button>
 
             <nav class="navbar" data-navbar>
 
@@ -104,14 +116,10 @@
                     <img src="" width="160" height="50" alt="ods3">
                 </a>
 
-                <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
-                    <ion-icon name="menu-outline" aria-hidden="true" class="menu-icon"></ion-icon>
-                    <ion-icon name="close-outline" aria-hidden="true" class="close-icon"></ion-icon>
-                </button>
                 <ul class="navbar-list">
 
                     <li class="navbar-item">
-                        <a href="/salud-bienestar/html/principalods.html" class="navbar-link hover-underline active">
+                        <a href="/salud-Bienestar/html/principalods.html" class="navbar-link hover-underline active">
                             <div class="separator"></div>
 
                             <span class="span">INICIO</span>
@@ -119,7 +127,7 @@
                         </l>
 
                     <li class="navbar-item">
-                        <a href="/salud-bienestar/html/sobre-nosotrosods.html" class="navbar-link hover-underline">
+                        <a href="/salud-Bienestar/html/sobre-nosotrosods.html" class="navbar-link hover-underline">
                             <div class="separator"></div>
 
                             <span class="span">Sobre Nosotros</span>
@@ -127,15 +135,15 @@
                     </li>
 
                     <li class="navbar-item">
-                        <a href="/salud-bienestar/html/SYMB.html" class="navbar-link hover-underline">
+                        <a href="/salud-Bienestar/html/SYBM.html" class="navbar-link hover-underline">
                             <div class="separator"></div>
-
-                            <span class="span">SYMB</span>
+            
+                            <span class="span">SYBM</span>
                         </a>
                     </li>
 
                     <li class="navbar-item">
-                        <a href="/salud-bienestar/html/galeriaods.html" class="navbar-link hover-underline">
+                        <a href="/salud-Bienestar/html/galeriaods.html" class="navbar-link hover-underline">
                             <div class="separator"></div>
 
                             <span class="span">Galeria</span>
@@ -143,7 +151,7 @@
                     </li>
 
                     <li class="navbar-item">
-                        <a href="/salud-bienestar/html/recursosods.html" class="navbar-link hover-underline">
+                        <a href="/salud-Bienestar/html/recursosods.html" class="navbar-link hover-underline">
                             <div class="separator"></div>
 
                             <span class="span">Recursos</span>
@@ -152,7 +160,7 @@
 
 
                     <li class="navbar-item">
-                        <a href="/salud-bienestar/html/contactoods.html" class="navbar-link hover-underline">
+                        <a href="/salud-Bienestar/html/contactoods.html" class="navbar-link hover-underline">
                             <div class="separator"></div>
 
                             <span class="span">CONTACTO</span>
@@ -174,6 +182,7 @@
 
         </div>
     </header>
+
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5 pb-5">
         <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
@@ -186,7 +195,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item position-relative active" style="min-height: 100vh;">
                     <video class="position-absolute w-100 h-100" style="object-fit: cover;" autoplay muted loop>
-                        <source src="img/carousel-1.mp4" type="video/mp4">
+                        <source src="/Salud-Bienestar/SYBM/img/carousel-1.mp4" type="video/mp4">
                         Tu navegador no soporta la reproducción de videos.
                     </video>
 
@@ -205,7 +214,7 @@
                 </div>
                 <div class="carousel-item position-relative" style="min-height: 100vh;">
                     <video class="position-absolute w-100 h-100" style="object-fit: cover;" autoplay muted loop>
-                        <source src="img/carousel-2.mp4" type="video/mp4">
+                        <source src="/Salud-Bienestar/SYBM/img/carousel-2.mp4" type="video/mp4">
                         Tu navegador no soporta la reproducción de videos.
                     </video>
 
@@ -224,7 +233,7 @@
                 </div>
                 <div class="carousel-item position-relative" style="min-height: 100vh;">
                     <video class="position-absolute w-100 h-100" style="object-fit: cover;" autoplay muted loop>
-                        <source src="img/carousel-3.mp4" type="video/mp4">
+                        <source src="/Salud-Bienestar/SYBM/img/carousel-3.mp4" type="video/mp4">
                         Tu navegador no soporta la reproducción de videos.
                     </video>
 
@@ -244,7 +253,7 @@
                 </div>
                 <div class="carousel-item position-relative" style="min-height: 100vh;">
                     <video class="position-absolute w-100 h-100" style="object-fit: cover;" autoplay muted loop>
-                        <source src="img/carousel-4.mp4" type="video/mp4">
+                        <source src="/Salud-Bienestar/SYBM/img/carousel-4.mp4" type="video/mp4">
                         Tu navegador no soporta la reproducción de videos.
                     </video>
 
@@ -277,7 +286,7 @@
         </div>
         <div class="owl-carousel service-carousel">
             <div class="service-item position-relative">
-                <img class="img-fluid" src="img/mariana-costa.jpg" alt="">
+                <img class="img-fluid" src="/Salud-Bienestar/SYBM/img/mariana-costa.jpg" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3"> Mariana Costa Checa </h4>
                     <p class="text-white px-3 mb-3"> Fundadora de Laboratoria, proyecto que enseña programación a
@@ -289,7 +298,7 @@
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="img/Malala_Yousafzai.jpg" alt="">
+                <img class="img-fluid" src="/Salud-Bienestar/SYBM/img/Malala_Yousafzai.jpg" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3"> Malala Yousafzai </h4>
                     <p class="text-white px-3 mb-3">Su lucha para que las niñas y mujeres paquistaníes puedan acceder a
@@ -301,7 +310,7 @@
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="img/Raquel Vasquez.jpg" alt="">
+                <img class="img-fluid" src="/Salud-Bienestar/SYBM/img/Raquel Vasquez.jpg" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3"> Raquel Vasquez </h4>
                     <p class="text-white px-3 mb-3">Lucha para acabar con la desigualdad de género en el medio rural,
@@ -315,7 +324,7 @@
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="img/Reshma Saujani.jpg" alt="">
+                <img class="img-fluid" src="/Salud-Bienestar/SYBM/img/Reshma Saujani.jpg" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3">Reshma Saujani</h4>
                     <p class="text-white px-3 mb-3"> Fundadora de Girls Who Code y Moms First, dedicada a cerrar la
@@ -326,7 +335,7 @@
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="img/Gertrude Belle.jpg" alt="">
+                <img class="img-fluid" src="/Salud-Bienestar/SYBM/img/Gertrude Belle.jpg" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3"> Gertrude Belle</h4>
                     <p class="text-white px-3 mb-3">Entre sus descubrimientos destaca el fármaco AZT para el tratamiento
@@ -338,7 +347,7 @@
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="img/Karla Wong.jpg" alt="">
+                <img class="img-fluid" src="/Salud-Bienestar/SYBM/img/Karla Wong.jpg" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3"> Karla Wong </h4>
                     <p class="text-white px-3 mb-3">Lidera la expansión de los servicios en la nube del gigante
@@ -358,7 +367,7 @@
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6 pb-5 pb-lg-0">
-                    <img class="img-fluid w-100" src="img/mujer.jpg" alt="">
+                    <img class="img-fluid w-100" src="/Salud-Bienestar/SYBM/img/mujer.jpg" alt="">
                 </div>
                 <div class="col-lg-6">
                     <h6 class="d-inline-block text-primary text-uppercase bg-light py-1 px-2">¿Por que es importante
@@ -409,7 +418,7 @@
             <div class="row">
                 <div class="col-lg-6" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="img/embarazo.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="/Salud-Bienestar/SYBM/img/embarazo.jpg" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 pt-5 pb-lg-5">
@@ -486,7 +495,7 @@
             <div class="row">
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="img/chica-embarazada.jpeg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="/Salud-Bienestar/SYBM/img/chica-embarazada.jpeg" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-7 pt-5 pb-lg-5">
@@ -547,7 +556,7 @@
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6 pb-5 pb-lg-0">
-                    <img class="img-fluid w-100" src="img/bebe.jpeg" alt="">
+                    <img class="img-fluid w-100" src="/Salud-Bienestar/SYBM/img/bebe.jpeg" alt="">
                 </div>
                 <div class="col-lg-6">
                     <h6 class="d-inline-block text-primary text-uppercase bg-light py-1 px-2">Recomendaciones para Recien Nacidos</h6>
@@ -557,51 +566,44 @@
                             <i class="fa fa-3x fa-quote-right text-primary position-absolute"
                                 style="top: -6px; right: 0;"></i>
                             <div class="d-flex align-items-center mb-3">
-                                <img class="img-fluid rounded-circle" src="img/testimonial-1.jpg"
+                                <img class="img-fluid rounded-circle" src="/Salud-Bienestar/SYBM/img/testimonial-1.jpg"
                                     style="width: 60px; height: 60px;" alt="">
                                 <div class="ml-3">
-                                    <h6 class="text-uppercase">Client Name</h6>
-                                    <span>Profession</span>
+                                    <h6 class="text-uppercase"> Mami Pamela</h6>
+                                    <span>Psicologa</span>
                                 </div>
                             </div>
-                            <p class="m-0">Aliquyam sed elitr elitr erat sed diam ipsum eirmod eos lorem nonumy.
-                                Tempor
-                                sea ipsum diam sed clita dolore eos dolores magna erat dolore sed stet justo et
-                                dolor.
+                            <p class="m-0">
+                                No tengas miedo de pedir ayuda, ya sea a tu pareja, familiares, amigos o incluso un profesional.
                             </p>
                         </div>
                         <div class="position-relative">
                             <i class="fa fa-3x fa-quote-right text-primary position-absolute"
                                 style="top: -6px; right: 0;"></i>
                             <div class="d-flex align-items-center mb-3">
-                                <img class="img-fluid rounded-circle" src="img/testimonial-2.jpg"
+                                <img class="img-fluid rounded-circle" src="/Salud-Bienestar/SYBM/img/testimonial-2.jpg"
                                     style="width: 60px; height: 60px;" alt="">
                                 <div class="ml-3">
-                                    <h6 class="text-uppercase">Client Name</h6>
-                                    <span>Profession</span>
+                                    <h6 class="text-uppercase">Mami Sofi</h6>
+                                    <span>Ama de Casa</span>
                                 </div>
                             </div>
-                            <p class="m-0">Aliquyam sed elitr elitr erat sed diam ipsum eirmod eos lorem nonumy.
-                                Tempor
-                                sea ipsum diam sed clita dolore eos dolores magna erat dolore sed stet justo et
-                                dolor.
+                            <p class="m-0"> <strong>Tiempo personal:</strong> Tómate un momento para ti, incluso si son 10 minutos al día. Leer, meditar o simplemente respirar profundamente puede ayudarte mucho.
                             </p>
                         </div>
                         <div class="position-relative">
                             <i class="fa fa-3x fa-quote-right text-primary position-absolute"
                                 style="top: -6px; right: 0;"></i>
                             <div class="d-flex align-items-center mb-3">
-                                <img class="img-fluid rounded-circle" src="img/testimonial-3.jpg"
+                                <img class="img-fluid rounded-circle" src="/Salud-Bienestar/SYBM/img/testimonial-3.jpg"
                                     style="width: 60px; height: 60px;" alt="">
                                 <div class="ml-3">
-                                    <h6 class="text-uppercase">Client Name</h6>
-                                    <span>Profession</span>
+                                    <h6 class="text-uppercase">Mami Ana</h6>
+                                    <span>Doctora</span>
                                 </div>
                             </div>
-                            <p class="m-0">Aliquyam sed elitr elitr erat sed diam ipsum eirmod eos lorem nonumy.
-                                Tempor
-                                sea ipsum diam sed clita dolore eos dolores magna erat dolore sed stet justo et
-                                dolor.
+                            <p class="m-0">
+                                <strong>Descanso:</strong> Aunque parezca difícil, intenta descansar cuando puedas. Una madre descansada está más preparada para enfrentar los desafíos diarios.
                             </p>
                         </div>
                     </div>
@@ -611,28 +613,164 @@
     </div>
     <!-- Testimonial End -->
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+            <!-- Parte Ia-->
+        <div id="chat-bubble">
+            <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/robot.svg" alt="Chat">
+        </div>
+        <div id="chat-container">
+            <button id="clear-chat">Vaciar Chat</button>
+            <div id="chat-messages">
+                <div class="message bot">
+                    <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/robot.svg" alt="Bot" class="avatar">
+                    <div class="message-content">
+                        <p>¡Hola! Soy Tu mascota virtual. ¿En qué puedo asistirte hoy?</p>
+                    </div>
+                </div>
+            </div>
+            <form id="chat-form">
+                <input type="text" id="user-input" placeholder="Escribe tu mensaje aquí..." required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <script type="importmap">
+            {
+                "imports": {
+                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+                }
+            }
+        </script>
+
+        <link rel="stylesheet" href="/salud-Bienestar/js/IA-Chat-GPT/IA.css">
+        <script type="module" src="/salud-Bienestar/js/IA-Chat-GPT/IA.js"></script>
+
+
+        </article>
+    </main>
 
 
 
-    <!-- JavaScript Libraries -->
+
+
+    <!-- 
+    - #FOOTER
+  -->
+
+    <footer class="footer section has-bg-image text-center"
+        style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO9kDQC4xvRFRNHoomRsfwRWxrz8nge7gEPuP_bafbBwPyk02oDfvaluQDLP9HrxIc15w&usqp=CAU')">
+        <div class="container">
+
+            <div class="footer-top grid-list">
+
+                <div class="footer-brand has-before has-after">
+
+                    <a href="#" class="logo">
+                        <img src="/salud-Bienestar/image/Logo.png" width="160" height="50" loading="lazy"
+                            alt="Salud y Bienestar">
+                    </a>
+
+                    <p class="body-4">
+                        ODS 3: Garantizar una vida sana y promover el bienestar para todos en todas las edades.
+                    </p>
+
+                    <div class="wrapper">
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                    </div>
+
+                    <p class="title-1">Reciba Noticias Sobre ODS</p>
+
+                    <form action="" class="input-wrapper">
+                        <div class="icon-wrapper">
+                            <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+
+                            <input type="email" name="email_address" placeholder="Tu correo electrónico"
+                                autocomplete="off" class="input-field">
+                        </div>
+
+                        <button type="submit" class="btn btn-secondary">
+                            <span class="text text-1">Suscríbete</span>
+
+                            <span class="text text-2" aria-hidden="true">Suscríbete</span>
+                        </button>
+                    </form>
+
+                </div>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <a href="/salud-Bienestar/html/principalods.html" class="label-2 footer-link hover-underline">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="/salud-Bienestar/html/sobreods.html" class="label-2 footer-link hover-underline">Sobre
+                            Nosotros</a>
+                    </li>
+
+                    <li>
+                        <a href="/salud-Bienestar/html/galeriaods.html" class="label-2 footer-link hover-underline">Galeria</a>
+                    </li>
+
+                    <li>
+                        <a href="/salud-Bienestar/html/recursosods.html" class="label-2 footer-link hover-underline">Recursos</a>
+                    </li>
+
+                    <li>
+                        <a href="/salud-Bienestar/html/contactoods.html" class="label-2 footer-link hover-underline">Contacto</a>
+                    </li>
+
+                </ul>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <a href="#" class="label-2 footer-link hover-underline">Facebook</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="label-2 footer-link hover-underline">Instagram</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="label-2 footer-link hover-underline">Tik Tok</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="label-2 footer-link hover-underline">Youtube</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-bottom">
+            </div>
+
+        </div>
+    </footer>
+
+    <a href="#top" class="back-top-btn active" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+    </a>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="/salud-Bienestar/js/ods.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="/module/SYBM/lib/easing/easing.min.js"></script>
-    <script src="/module/SYBM/lib/waypoints/waypoints.min.js"></script>
-    <script src="/module/SYBM/lib/counterup/counterup.min.js"></script>
-    <script src="/module/SYBM/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="/module/SYBM/lib/tempusdominus/js/moment.min.js"></script>
-    <script src="/module/SYBM/lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="/module/SYBM/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="/module/SYBM/mail/jqBootstrapValidation.min.js"></script>
-    <script src="/module/SYBM/mail/contact.js"></script>
+    <script src="/salud-Bienestar/SYBM/lib/easing/easing.min.js"></script>
+    <script src="/salud-Bienestar/SYBM/lib/waypoints/waypoints.min.js"></script>
+    <script src="/salud-Bienestar/SYBM/lib/counterup/counterup.min.js"></script>
+    <script src="/salud-Bienestar/SYBM/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/salud-Bienestar/SYBM/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="/salud-Bienestar/SYBM/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="/salud-Bienestar/SYBM/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="/module/SYBM/js/main.js"></script>
+    <script src="/salud-Bienestar/SYBM/js/main.js"></script>
+
 </body>
 
 </html>
