@@ -1,7 +1,7 @@
 // Validaciones en tiempo real
 document.querySelectorAll("input, select, textarea").forEach(field => {
-    field.addEventListener("input", () => validateField(field)); // Validación en tiempo real
-    field.addEventListener("blur", () => validateField(field));  // Validación al salir del campo
+    field.addEventListener("input", () => validateField(field)); 
+    field.addEventListener("blur", () => validateField(field));  
 });
 
 function validateField(field) {

@@ -1,8 +1,14 @@
 <?php
-require_once '../php/conexion.php';
+require_once 'conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
+        $conn = Database::getInstance();
+        
+        if (!$conn) {
+            throw new Exception("No se pudo establecer la conexión a la base de datos.");
+        }
+
         $nombres = $_POST['nombres'];
         $apellidos = $_POST['apellidos']; 
         $tipoDocumento = $_POST['tipoDocumento'];
@@ -19,6 +25,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $stmt = $conn->prepare($sql);
         
+        if (!$stmt) {
+            throw new Exception("Error al preparar la consulta SQL.");
+        }
+
         $stmt->bindParam(':nombres', $nombres);
         $stmt->bindParam(':apellidos', $apellidos);
         $stmt->bindParam(':tipoDocumento', $tipoDocumento);
@@ -36,8 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     } catch(PDOException $e) {
         echo "Error al guardar los datos: " . $e->getMessage();
+    } catch(Exception $e) {
+        echo "Error: " . $e->getMessage();
     }
-
-    cerrarConexion();
 }
 ?>

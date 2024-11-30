@@ -6,12 +6,12 @@
     <title>Fechas Cívicas</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="/DASHBBOARD/css/fechas-civicas.css">
+    <link rel="stylesheet" href="/Dashboard/css/fechas-civicas.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="/module/image/Logo.png" alt="Logo">
+            <img src="/Salud-Bienestar/image/Logo.png" alt="Logo">
         </div>
         <div class="nav-links">
             <a href="#" data-aos="fade-down">Inicio</a>
@@ -31,7 +31,7 @@
 
     <section class="form-section">
         <div class="form-container" data-aos="fade-up">
-            <form id="eventoForm" action="/module/php/eventos.php" method="POST" enctype="multipart/form-data">
+            <form id="eventoForm" action="/Salud-Bienestar/php/eventos.php" method="POST" enctype="multipart/form-data">
                 <input type="text" id="titulo" name="titulo" placeholder="Título" required>
                 <input type="text" id="descripcion" name="descripcion" placeholder="Descripción">
                 <input type="date" id="fecha" name="fecha" required>
@@ -40,6 +40,7 @@
             </form>
         </div>
     </section>
+
 
     <section class="events-section">
         <div id="eventos-container" data-aos="fade-up">
@@ -60,7 +61,8 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="/DASHBBOARD/js/fechas-civicas.js"></script>
+    <script src="/Dashboard/js/fechas-civicas.js"></script>
 </body>
 </html>

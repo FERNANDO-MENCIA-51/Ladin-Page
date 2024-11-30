@@ -4,19 +4,16 @@ AOS.init({
     mirror: false
 });
 
-// Tema oscuro/claro
 function toggleTheme() {
     document.body.classList.toggle('neon-mode');
     const themeIcon = document.querySelector('.theme-toggle i');
     themeIcon.classList.toggle('fa-moon');
     themeIcon.classList.toggle('fa-sun');
     
-    // Guardar preferencia en localStorage
     const isDarkMode = document.body.classList.contains('neon-mode');
     localStorage.setItem('darkMode', isDarkMode);
 }
 
-// Cargar tema guardado
 document.addEventListener('DOMContentLoaded', () => {
     const savedDarkMode = localStorage.getItem('darkMode') === 'true';
     if (savedDarkMode) {
@@ -24,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.theme-toggle i').classList.replace('fa-moon', 'fa-sun');
     }
     
-    // Cargar eventos existentes al cargar la página
     cargarEventos();
 });
 
@@ -32,7 +28,6 @@ function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
     
-    // Animación del menú
     if(navLinks.classList.contains('active')) {
         navLinks.style.animation = 'slideIn 0.3s forwards';
     } else {
@@ -40,16 +35,14 @@ function toggleMenu() {
     }
 }
 
-// Función para cargar eventos existentes
 async function cargarEventos() {
     try {
-        const response = await fetch('/module/php/eventos.php');
+        const response = await fetch('/Salud-Bienestar/php/eventos.php');
         if (!response.ok) {
             throw new Error('Error al cargar los eventos');
         }
         const responseText = await response.text();
         
-        // Buscar y extraer solo el JSON de la respuesta
         const jsonMatch = responseText.match(/\{.*\}|\[.*\]/s);
         if (!jsonMatch) {
             throw new Error('No se encontró JSON válido en la respuesta');
@@ -58,15 +51,17 @@ async function cargarEventos() {
         const eventos = JSON.parse(jsonMatch[0]);
         mostrarEventos(eventos);
     } catch (error) {
-        mostrarNotificacion('Error al cargar los eventos: ' + error.message, 'error');
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Error al cargar los eventos: ' + error.message
+        });
     }
 }
 
-// Manejar el formulario
 document.getElementById('eventoForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
-    // Mostrar indicador de carga
     const submitButton = this.querySelector('button[type="submit"]');
     const originalButtonText = submitButton.innerHTML;
     submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
@@ -75,7 +70,6 @@ document.getElementById('eventoForm').addEventListener('submit', async function(
     try {
         const formData = new FormData(this);
         
-        // Validaciones
         const titulo = formData.get('titulo');
         const fecha = formData.get('fecha');
         const imagen = formData.get('imagen');
@@ -84,10 +78,9 @@ document.getElementById('eventoForm').addEventListener('submit', async function(
             throw new Error('El título debe tener al menos 3 caracteres');
         }
         
-        // Validación de fecha: solo permitir fechas desde hoy en adelante
         const fechaSeleccionada = new Date(fecha);
         const hoy = new Date();
-        hoy.setHours(0, 0, 0, 0); // Resetear la hora a medianoche
+        hoy.setHours(0, 0, 0, 0);
         
         if(fechaSeleccionada < hoy) {
             throw new Error('Solo puedes seleccionar fechas desde hoy en adelante');
@@ -97,22 +90,18 @@ document.getElementById('eventoForm').addEventListener('submit', async function(
             throw new Error('La imagen no debe superar los 5MB');
         }
 
-        // Enviar datos
-        const response = await fetch('/module/php/eventos.php', {
+        const response = await fetch('/Salud-Bienestar/php/eventos.php', {
             method: 'POST',
             body: formData
         });
 
-        // Primero obtener el texto de la respuesta
         const responseText = await response.text();
         
-        // Extraer solo la parte JSON de la respuesta
         const jsonMatch = responseText.match(/\{.*\}/s);
         if (!jsonMatch) {
             throw new Error('No se encontró JSON válido en la respuesta');
         }
         
-        // Intentar parsear el JSON extraído
         let jsonData;
         try {
             jsonData = JSON.parse(jsonMatch[0]);
@@ -129,25 +118,29 @@ document.getElementById('eventoForm').addEventListener('submit', async function(
             throw new Error(jsonData.error);
         }
 
-        // Limpiar el contenedor antes de mostrar el nuevo evento
         document.getElementById('eventos-container').innerHTML = '';
-        // Recargar todos los eventos
         await cargarEventos();
         
         this.reset();
-        mostrarNotificacion('¡Evento agregado con éxito!', 'success');
+        Swal.fire({
+            icon: 'success',
+            title: '¡Éxito!',
+            text: '¡Evento agregado con éxito!'
+        });
         
     } catch(error) {
         console.error('Error completo:', error);
-        mostrarNotificacion(error.message, 'error');
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: error.message
+        });
     } finally {
-        // Restaurar el botón
         submitButton.innerHTML = originalButtonText;
         submitButton.disabled = false;
     }
 });
 
-// Función para mostrar eventos
 function mostrarEventos(eventos) {
     const container = document.getElementById('eventos-container');
     
@@ -163,7 +156,6 @@ function mostrarEventos(eventos) {
             day: 'numeric'
         });
         
-        // Construir la ruta completa de la imagen
         const imagenUrl = evento.imagen ? `/${evento.imagen}` : '/assets/img/default-event.jpg';
         
         card.innerHTML = `
@@ -178,21 +170,15 @@ function mostrarEventos(eventos) {
     });
 }
 
-// Función para mostrar notificaciones
 function mostrarNotificacion(mensaje, tipo) {
-    const notificacion = document.createElement('div');
-    notificacion.className = `notificacion ${tipo}`;
-    notificacion.textContent = mensaje;
-    document.body.appendChild(notificacion);
-    
-    // Añadir clase para posición fija
-    notificacion.style.position = 'fixed';
-    notificacion.style.top = '20px';
-    notificacion.style.right = '20px';
-    notificacion.style.zIndex = '1000';
-    
-    setTimeout(() => {
-        notificacion.classList.add('fadeOut');
-        setTimeout(() => notificacion.remove(), 300);
-    }, 3000);
+    Swal.fire({
+        icon: tipo,
+        title: tipo === 'success' ? 'Éxito' : 'Error',
+        text: mensaje,
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true
+    });
 }

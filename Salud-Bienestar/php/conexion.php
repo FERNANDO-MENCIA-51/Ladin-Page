@@ -4,9 +4,9 @@ class Database {
     private $conn;
     
     // Configuración de la base de datos
-    private $servername = "localhost";
-    private $username = "root"; 
-    private $password = "";
+    private $servername = "t03-ods03.cb2sa6oc0p22.us-east-1.rds.amazonaws.com";
+    private $username = "admin"; 
+    private $password = "71398927Luis";
     private $dbname = "dbgeneral";
 
     private function __construct() {
